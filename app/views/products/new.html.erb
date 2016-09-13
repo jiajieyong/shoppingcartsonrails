@@ -1,6 +1,16 @@
 <h1>Add new products</h1>
 
     <%= form_for(@product) do |f| %>
+      <% if @product.errors.any? %>
+      <h2>Errors:</h2>
+      <ul>
+        <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  
+    <%= form_for(@product) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
 
@@ -17,5 +27,5 @@
       <%= f.select(:category_id, options_for_select(@categories), :prompt => "Category") %> <br>
 
 
-      <%= f.submit "Add new product", class: "btn btn-primary" %>
+      <%= f.submit "Add new product"%>
     <% end %>
