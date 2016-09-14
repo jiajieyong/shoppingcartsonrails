@@ -5,6 +5,7 @@
 			<th>Name</th>
 			<th>Price</th>
 			<th>Description</th>
+			<th>Link</th>
 		</tr>
 	</thead>
 
@@ -14,7 +15,7 @@
 				<td><%= t.name %></td>
 				<td><%= t.price %></td>
 				<td><%= t.description %></td>	
-        <td><%= link_to Category.find(t.id).name, category_path(t.id) %></td>
+        		<td><%= link_to Category.find(t.id).name%></td>
 			</tr>
 		<% end %> 
 	</tbody>

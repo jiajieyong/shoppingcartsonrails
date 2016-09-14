@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
 		else
 			render 'new'
 		end
+
 		
 		# @product.save
 		# redirect_to products_path
@@ -29,6 +30,6 @@ class ProductsController < ApplicationController
 
 	private 
 		def product_params
-			params.require(:product).permit(:name, :price)
+			params.require(:product).permit(:name, :price, :description, :in_stock, :category_id)
 		end
 end
