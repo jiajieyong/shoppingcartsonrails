@@ -1,31 +1,31 @@
 <h1>Add new products</h1>
 
-    <%= form_for(@product) do |f| %>
-      <% if @product.errors.any? %>
-      <h2>Errors:</h2>
-      <ul>
-        <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  
-    <%= form_for(@product) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <h2>Errors:</h2>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
 
-      <%= f.label :price %>
-      <%= f.number_field :price %>
+<%= form_for(@product) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
 
-        <%= f.label :description, "Description" %>
-      <%= f.text_area :description %> <br>
+  <%= f.label :price %>
+  <%= f.number_field :price %> <br>
 
-      <%= f.label :in_stock, "In Stock?" %>
-      <%= f.check_box :in_stock %> <br>
+  <%= f.label :description, "Description" %>
+  <%= f.text_area :description %> <br>
 
-      <%= f.label :category_id, "Category" %>
-      <%= f.select(:category_id, options_for_select(@categories), :prompt => "Category") %> <br>
+  <%= f.label :in_stock, "In Stock?" %>
+  <%= f.check_box :in_stock %> <br>
 
+  <%= f.label :category_id, "Category" %>
+  <%= f.select(:category_id, options_for_select(@categories), :prompt => "Category") %> <br>
 
-      <%= f.submit "Add new product"%>
-    <% end %>
+  <%= f.submit "Add new product" %>
+<% end %>
